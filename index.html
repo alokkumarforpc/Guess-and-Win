@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advanced Guess The Number Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Guess The Number Game</h1>
+
+    <div class="settings">
+      <label for="difficulty">Select Difficulty:</label>
+      <select id="difficulty">
+        <option value="10">Easy (1-10)</option>
+        <option value="50" selected>Medium (1-50)</option>
+        <option value="100">Hard (1-100)</option>
+        <option value="custom">Custom</option>
+      </select>
+      <input
+        type="number"
+        id="customMax"
+        placeholder="Enter custom max number"
+        min="1"
+        class="hidden"
+      />
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <div id="gameArea" class="hidden">
+      <p id="info">Guess a number between <span id="rangeMax"></span></p>
+
+      <label for="guessInput">Your Guess:</label>
+      <input type="text" id="guessInput" placeholder="Enter your guess" autocomplete="off" />
+      <div class="buttons">
+        <button id="guessBtn">Guess</button>
+        <button id="quitBtn" class="quit">Quit</button>
+      </div>
+
+      <p id="message"></p>
+      <p>Attempts: <span id="attemptsCount">0</span> / 10</p>
+      <p>Score: <span id="score">0</span></p>
+
+      <h3>Guess History</h3>
+      <ul id="historyList"></ul>
+    </div>
+
+    <div class="dark-mode-toggle">
+      <label>
+        <input type="checkbox" id="darkModeToggle" />
+        Dark Mode
+      </label>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
